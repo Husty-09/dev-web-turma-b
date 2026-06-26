@@ -16,8 +16,19 @@ const routes = [
   },
   {
     path: "/pedidos",
-    name: "pedidos",
-    component: PedidosView,
+    name: "Pedidos",
+    component: () =>
+      import(/* webpackChunkName: "pedidos" */ "../views/PedidosView.vue"),
+  },
+  {
+    path: "/carrinho",
+    name: "Carrinho",
+    component: () => import("../views/CarrinhoView.vue"),
+  },
+  {
+    path: "/checkout",
+    name: "Checkout",
+    component: () => import("../views/CheckoutView.vue"),
   },
   {
     path: "/config-pedido",
